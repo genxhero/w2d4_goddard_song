@@ -10,6 +10,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Cat
 
+has_many :requests,
+primary_key: :id,
+foreign_key: :user_id,
+class_name: 'CatRentalRequest'
+
   attr_reader :password
 
   COMMON_PASSWORDS = ['password']

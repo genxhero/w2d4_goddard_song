@@ -1,17 +1,19 @@
 <h1><%= @cat.name %></h1>
 
-<table>
-  <tr>
-    <th>Attribute</th>
-    <th>Value</th>
+<table style="border: 1px solid black">
+  <tr style="border: 1px solid black">
+    <th style="border: 1px solid black">Attribute</th>
+    <th style="border: 1px solid black">Value</th>
   </tr>
   <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
-    <tr>
-      <td><%= attr_name %></td>
-      <td><%= @cat.send(attr_name) %></td>
+    <tr style="border: 1px solid black">
+    <td style="border: 1px solid black"><%= attr_name %></td>
+      <td style="border: 1px solid black"><%= @cat.send(attr_name) %></td>
     </tr>
   <% end %>
 </table>
+
+    <p> <%= @cat.description %>    </p>
 
 <a href="<%= edit_cat_url(@cat) %>">Edit <%= @cat.name %></a>
 

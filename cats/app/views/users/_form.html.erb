@@ -1,0 +1,25 @@
+<% if action == :new %>
+  <% action_url = users_url %>
+  <% method = :post %>
+<% elsif action == :login %>
+  <% action_url = new_session_url %>
+  <% method = :post %>
+<% end %>
+
+
+
+
+<form action="<%= action_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <label for="login">Enter Username:</label>
+  <input type="text" name="user[username]" id="login">
+  <label for="login">Enter Password:</label>
+  <input type="password" name="user[password]" id="login">
+  <br>
+  <input type="submit" value="SUBMIT">
+
+</form>

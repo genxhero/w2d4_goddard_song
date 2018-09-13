@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :require_login, only: [:destroy]
   before_action :require_logout, only: [:new, :create]
 
+
   def new
     @user = User.new
     render :new
